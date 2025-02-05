@@ -3,7 +3,6 @@ const cors = require('cors');
 const pool = require('./config/db');  // Import your database configuration
 
 const authRoutes = require('./routes/authRoutes');
-const employeeRoutes = require('./routes/employeeRoutes');
 const companyRoutes = require('./routes/companyRoutes');
 const workReportRoutes = require('./routes/workReportRoutes');
 
@@ -26,7 +25,6 @@ app.get('/test-db', async (req, res) => {
 });
 
 app.use('/auth', authRoutes);
-app.use('/employees', employeeRoutes);
 app.use('/companies', companyRoutes);
 app.use('/work-reports', workReportRoutes);
 
