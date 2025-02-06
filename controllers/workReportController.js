@@ -23,11 +23,11 @@ exports.createWorkReport = async (req, res) => {
     status,
     assistant_name,
     company_id,
-    emp_id
+    user_id
   } = req.body;
 
   // Validate all fields are provided
-  if (!date || !machine_name || !nature_of_complaint || !solution || !in_time || !out_time || !status || !assistant_name || !company_id || !emp_id) {
+  if (!date || !machine_name || !nature_of_complaint || !solution || !in_time || !out_time || !status || !assistant_name || !company_id || !user_id) {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
@@ -53,7 +53,7 @@ exports.createWorkReport = async (req, res) => {
         status, 
         assistant_name, 
         company_id, 
-        emp_id
+        user_id
       ]
     );
 

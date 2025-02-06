@@ -71,7 +71,7 @@ exports.getEmployeeWorkReports = async (req, res) => {
   const { user_id } = req.params;
 
   try {
-    const result = await pool.query('SELECT * FROM work_reports WHERE id = $1', [user_id]);
+    const result = await pool.query('SELECT * FROM work_reports WHERE user_id = $1', [user_id]);
     res.json(result.rows);
   } catch (err) {
     console.error(err);
