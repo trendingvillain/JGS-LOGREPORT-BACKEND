@@ -39,7 +39,7 @@ exports.createWorkReport = async (req, res) => {
     // Query to insert work report
     const result = await pool.query(
       `INSERT INTO work_reports 
-        (date, machine_name, nature_of_complaint, solution, in_time, out_time, status, assistant_name, company_id, emp_id) 
+        (date, machine_name, nature_of_complaint, solution, in_time, out_time, status, assistant_name, company_id, user_id) 
         VALUES 
         ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) 
         RETURNING id, date, machine_name, status, assistant_name`,
